@@ -5,6 +5,12 @@
   overflow: scroll;
   min-height: 600px;
 
+  &::-webkit-scrollbar {
+    width: 0em;
+  }
+
+
+
   &__title {
     margin-bottom: 24px;
   }
@@ -12,6 +18,11 @@
   &__cards-wrapper {
     display: flex;
     overflow: auto;
+
+    &::-webkit-scrollbar {
+      background-color: transparent;
+    }
+
   }
 
   &__cards {

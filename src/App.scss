@@ -34,8 +34,11 @@
     width: 100%;
     flex-grow: 1;
     overflow: scroll;
-
-    // border: 1px solid #000;
     border-radius: 10px;
+
+    &::-webkit-scrollbar {
+      width: 0.5em;
+      background-color: #F5F5F5;
+    }
   }
 }

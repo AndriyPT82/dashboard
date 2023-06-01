@@ -6,6 +6,8 @@
   flex-direction: column;
   flex-grow: 1;
   font-size: $SUBTITLE_FONT_SIZE;
+  width: 100%;
+  overflow: hidden;
 
   &__welcome {
     font-size: $TITLE_FONT_SIZE;
