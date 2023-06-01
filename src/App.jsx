@@ -1,4 +1,6 @@
-import { HashRouter, BrowserRouter, Routes, Rout, Route } from 'react-router-dom'
+
+import React from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import { DashboardHeader } from './components/DashboardHeader';
 import { handleSelectedLink } from "./utils/assets/handleSelectedLink";
 import { Dashboard } from './components/Dashboard/Dashboard';
@@ -22,7 +24,7 @@ function App() {
               <Route path='dashboard' element={<Dashboard />} />
               <Route path='projects' element={<Projects />} />
               <Route path='saved' element={<Saved />}>
-                
+
               </Route>
 
             </Routes>

@@ -1,14 +1,17 @@
 .saved {
-
+  margin-bottom: 150px;
   &__links {
+    position: sticky;
+    background-color: #fff;
+    padding-bottom: 20px ;
+    top: 0;
+
+
     display: flex;
     gap: 16px;
-    // padding-bottom: 20px;
-
   }
 
   &__link {
-
     &--active {
       border-bottom: 1px solid #000;
     }
