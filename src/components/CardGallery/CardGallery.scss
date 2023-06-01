@@ -1,0 +1,22 @@
+.card-gallery {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: scroll;
+  min-height: 600px;
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__cards-wrapper {
+    display: flex;
+    overflow: auto;
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+}

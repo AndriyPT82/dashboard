@@ -1,0 +1,50 @@
+@import '../../utils/styles/variables.scss';
+
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 100%;
+  border-right: 1px solid $BORDER_COLOR;
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__link-wrapper {
+    display: flex;
+    height: 48px;
+
+    &:nth-last-child(2) {
+      margin: auto 0px 0px 0px;
+    }
+
+  }
+  &__link {
+    all: unset;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    padding-left: 70px;
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 26px center;
+    
+    &--active {
+      background-color: #d2e0d6;
+      border-right: 4px solid #4CAD66;
+    }
+  }
+
+  &__auth {
+    height: 90px;
+  }
+
+}
