@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Rout, Route } from 'react-router-dom'
+import { HashRouter, BrowserRouter, Routes, Rout, Route } from 'react-router-dom'
 import { DashboardHeader } from './components/DashboardHeader';
 import { handleSelectedLink } from "./utils/assets/handleSelectedLink";
 import { Dashboard } from './components/Dashboard/Dashboard';
@@ -12,7 +12,7 @@ import './App.scss';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <DashboardHeader />
         <Sidebar />
@@ -30,7 +30,7 @@ function App() {
         </div>
 
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
