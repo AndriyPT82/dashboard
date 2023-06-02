@@ -31,6 +31,7 @@
   }
 
   &__input {
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -43,6 +44,7 @@
 
     &>label {
       cursor: pointer;
+      width: max-content;
       margin-bottom: 12px;
     }
 
