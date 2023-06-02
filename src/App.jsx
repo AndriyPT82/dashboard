@@ -10,6 +10,7 @@ import { Saved } from './components/Saved/Saved';
 
 import { NavLink } from "react-router-dom";
 import './App.scss';
+import { ContactUs } from './components/ContactUs/CuntactUs';
 
 
 function App() {
@@ -23,9 +24,8 @@ function App() {
             <Routes>
               <Route path='dashboard' element={<Dashboard />} />
               <Route path='projects' element={<Projects />} />
-              <Route path='saved' element={<Saved />}>
-
-              </Route>
+              <Route path='saved' element={<Saved />} />
+              <Route path='help_center' element={<ContactUs />} />
 
             </Routes>
           </div>

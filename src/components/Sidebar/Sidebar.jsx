@@ -12,11 +12,10 @@ const links = [
   { path: 'projects', title: 'Projects', icon: projects_icon },
   { path: 'saved', title: 'Saved', icon: saved_icon },
   { path: 'settings', title: 'Settings', icon: settings_icon },
-  { path: 'help', title: 'Help Center', icon: help_center_icon },
+  { path: 'help_center', title: 'Help Center', icon: help_center_icon },
 ]
 
 const handleSelectedLink = (isActive, className) => {
-  console.log(isActive, className);
   return `${className} ` + (isActive ? `${className}--active` : '')
 }
 
@@ -27,7 +26,7 @@ export function Sidebar() {
 
         {
           links.map(({ path, title, icon }, index) => (
-            <li className="sidebar__link-wrapper">
+            <li className="sidebar__link-wrapper" key={index}>
               <NavLink
                 to={path}
                 className={({isActive}) => handleSelectedLink(isActive, 'sidebar__link')}

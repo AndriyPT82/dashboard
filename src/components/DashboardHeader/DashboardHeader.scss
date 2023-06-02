@@ -50,15 +50,8 @@
   }
 
   &__new-project-button {
-    position: relative;
-    justify-content: center;
+    @extend %dashboard-buttons-styles;
     width: 183px;
-    height: 40px;
-    color: white;
-    border-radius: 4px;
-    background: none;
-    border: none;
-    background: rgba(76, 173, 102, 1);
 
     &::after {
       content: url('../../utils/icons/plus.svg');
@@ -78,4 +71,6 @@
     margin-left: 12px;
   }
 
-};
+}
+
+;

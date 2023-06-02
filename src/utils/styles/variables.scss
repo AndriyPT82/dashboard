@@ -1,3 +1,14 @@
 $BORDER_COLOR: #EAECEE;
 $SUBTITLE_FONT_SIZE: 24px;
 $TITLE_FONT_SIZE: 36px;
+
+
+%dashboard-buttons-styles {
+  cursor: pointer;
+  height: 40px;
+  color: white;
+  border-radius: 4px;
+  background: none;
+  border: none;
+  background: rgba(76, 173, 102, 1);
+}
