@@ -10,6 +10,7 @@
 button {
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 a {
@@ -40,8 +41,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin: 20px;
-  padding-bottom: 0px;
+  padding: 20px 0px 0px 36px;
   width: 100%;
   flex-grow: 1;
   overflow: scroll;

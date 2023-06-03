@@ -9,6 +9,7 @@ import Card from './Card/Card';
 import ViewProject from './ViewProject/ViewProject';
 import AccountDetails from './AccountDetails/AccountDetails';
 import SmallAccountDetails from './SmallAccountDetails/SmallAccountDetails';
+import TestPage from './TestPage';
 
 export {
   Dashboard,
@@ -21,5 +22,6 @@ export {
   Card,
   ViewProject,
   AccountDetails,
-  SmallAccountDetails
+  SmallAccountDetails,
+  TestPage
 }

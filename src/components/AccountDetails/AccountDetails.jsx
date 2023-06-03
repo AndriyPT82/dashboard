@@ -17,11 +17,10 @@ function AccountDetails() {
           <Input title={"Email"} value={"james@gmail.com"} isDisabled={true} />
           <Input title={"Phone"} value={"310-685-3335"} isDisabled={true} />
         </div>
-        <button>Edit</button>
+        <button onClick={() => console.log('redirect to edite page')}>Edit</button>
       </div>
       <div className={s.pricing_plans_block}>
         <h2>Pricing Plans</h2>
-
         <p>It's still under development</p>
       </div>
     </div>

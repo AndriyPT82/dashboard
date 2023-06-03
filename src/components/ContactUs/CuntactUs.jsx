@@ -187,20 +187,3 @@ function ContactUs() {
 
 
 export default ContactUs;
-
-
-// const Input = (title, htmlFor, type, placeholder, name, id, handleChange) => {
-//   <div className="contact-us__input">
-//     <label htmlFor={htmlFor}>{type}</label>
-//     <input
-
-//       type="text"
-
-//       placeholder={placeholder}
-//       name={name}
-//       id={id}
-
-//       onChange={handleChange}
-//     />
-//   </div>
-// }

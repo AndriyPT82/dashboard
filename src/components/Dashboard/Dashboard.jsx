@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import s from './Dashboard.module.scss';
 
 const links = [
-  { path: 'pricing_plans', title: 'Pricing plans', icon: dollar_icon },
-  { path: 'contact_details', title: 'Contact details', icon: phone_icon },
-  { path: 'saved_pictures', title: 'Saved pictures', icon: saved2_icon }
+  { path: 'test_page', title: 'Pricing plans', icon: dollar_icon },
+  { path: 'test_page', title: 'Contact details', icon: phone_icon },
+  { path: 'test_page', title: 'Saved pictures', icon: saved2_icon }
 ]
 
 function Dashboard({ name = "James" }) {

@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import {
   Dashboard,
   Sidebar,
@@ -7,9 +7,11 @@ import {
   Saved,
   ContactUs,
   ViewProject,
-  AccountDetails
+  AccountDetails,
+  TestPage
 } from './components'
 import s from './App.module.scss';
+import Settings from 'components/Settings/Settings';
 
 
 
@@ -29,6 +31,8 @@ function App() {
               <Route path='help_center' element={<ContactUs />} />
               <Route path='view_project' element={<ViewProject />} />
               <Route path='account_details' element={<AccountDetails />} />
+              <Route path='settings' element={<Settings />} />
+              <Route path='test_page' element={<TestPage />} />
             </Routes>
           </div>
         </div>

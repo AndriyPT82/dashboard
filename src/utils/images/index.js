@@ -5,11 +5,12 @@ import photo4 from './photo4.png'
 import photo5 from './photo5.png'
 import james_franco from './james_franco.png'
 
-export {photo1}
+export {photo1, james_franco }
 export const photos = [
   photo2,
   photo3,
   photo4,
   photo5,
-  james_franco,
 ];
+
+
