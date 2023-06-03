@@ -1,36 +1,37 @@
-
-import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom'
-import { DashboardHeader } from './components/DashboardHeader';
-import { handleSelectedLink } from "./utils/assets/handleSelectedLink";
-import { Dashboard } from './components/Dashboard/Dashboard';
-import { Sidebar } from './components/Sidebar';
-import { Projects } from './components/Projects';
-import { Saved } from './components/Saved/Saved';
+import {
+  Dashboard,
+  Sidebar,
+  DashboardHeader,
+  Projects,
+  Saved,
+  ContactUs,
+  ViewProject,
+  AccountDetails
+} from './components'
+import s from './App.module.scss';
 
-import { NavLink } from "react-router-dom";
-import './App.scss';
-import { ContactUs } from './components/ContactUs/CuntactUs';
+
 
 
 function App() {
   return (
     <HashRouter>
-      <div className="App">
+      <div className={s.App}>
         <DashboardHeader />
         <Sidebar />
-        <div className="App__main">
-          <div className="App__content">
+        <div className={s.main}>
+          <div className={s.content}>
             <Routes>
-              <Route path='dashboard' element={<Dashboard />} />
+              <Route path='/' element={<Dashboard />} />
               <Route path='projects' element={<Projects />} />
               <Route path='saved' element={<Saved />} />
               <Route path='help_center' element={<ContactUs />} />
-
+              <Route path='view_project' element={<ViewProject />} />
+              <Route path='account_details' element={<AccountDetails />} />
             </Routes>
           </div>
         </div>
-
       </div>
     </HashRouter>
   );

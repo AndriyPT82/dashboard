@@ -1,33 +1,36 @@
-import React from "react";
-import './Dashboard.scss';
-import dollar_icon from '../../utils/icons/dollar_icon.svg'
-import phone_icon from '../../utils/icons/phone_icon.svg'
-import saved_2_icon from '../../utils/icons/saved_2_icon.svg'
+import { dollar_icon, phone_icon, saved2_icon } from 'utils/icons/index'
+import { photos, photo1 } from 'utils/images';
 import { Link } from "react-router-dom";
-
+import s from './Dashboard.module.scss';
 
 const links = [
   { path: 'pricing_plans', title: 'Pricing plans', icon: dollar_icon },
   { path: 'contact_details', title: 'Contact details', icon: phone_icon },
-  { path: 'saved_pictures', title: 'Saved pictures', icon: saved_2_icon }
+  { path: 'saved_pictures', title: 'Saved pictures', icon: saved2_icon }
 ]
 
-export function Dashboard({ name = "James" }) {
+function Dashboard({ name = "James" }) {
   return (
-    <div className="dashboard">
-      <h2 className="dashboard__welcome"> Welcome back, {name}!</h2>
-      <div className="dashboard__images">
-        <img src={require('../../utils/images/photo1.png')} className="dashboard__main-photo" />
-        <div className="dashboard__image-container">
-          <img src={require('../../utils/images/photo2.png')} width="264" height="180" />
-          <img src={require('../../utils/images/photo3.png')} width="264" height="180" />
-          <img src={require('../../utils/images/photo4.png')} width="264" height="180" />
-          <img src={require('../../utils/images/photo5.png')} width="264" height="180" />
-
+    <div className={s.container}>
+      <h2 className={s.welcome}> Welcome back, {name}!</h2>
+      <div className={s.images}>
+        <img src={photo1} className={s.main_image} alt="main-img" />
+        <div className={s.image_container}>
+          {
+            photos.map(photo => (
+              <img
+                key={photo}
+                src={photo}
+                width="264"
+                height="180"
+                alt="small-img"
+              />
+            ))
+          }
         </div>
       </div>
-      <div className="dashboard__info">
-        <div className="dashboard__description">
+      <div className={s.info}>
+        <div className={s.description}>
           <h3>What's New</h3>
           <p>
             Introducing the latest addition to our cutting-edge 3D room rendering software: Dynamic Lighting! With Dynamic Lighting, you can now bring your virtual rooms to life with realistic and immersive lighting effects. Whether you're designing a cozy living room, a sleek office space, or a futuristic sci-fi environment, Dynamic Lighting allows you to manipulate light sources in real-time, creating stunning visual effects and adding depth and realism to your virtual spaces.
@@ -38,27 +41,26 @@ export function Dashboard({ name = "James" }) {
           </p>
 
         </div>
-        <div className="dashboard__links">
-          <h3 className="dashboard__links-title">Fast links</h3>
-          <div className="dashboard__links-container">
+        <div className={s.links}>
+          <h3 className={s.links_title}>Fast links</h3>
+          <div className={s.links_container}>
             {
               links.map(({ path, title, icon }) => (
                 <Link
                   to={path}
-                  className="dashboard__link"
+                  key={path}
+                  className={s.link}
                   style={{ backgroundImage: `url(${icon})` }}
                 >
                   {title}
                 </Link>
               ))
             }
-
-
           </div>
         </div>
       </div>
-
     </div>
   );
 }
 
+export default Dashboard;

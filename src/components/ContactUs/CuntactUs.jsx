@@ -11,7 +11,7 @@ const checkForError = (errorsList, fieldName) => {
 }
 
 
-export function ContactUs() {
+function ContactUs() {
 
   const [state, setState] = useState({
     firstName: '',
@@ -59,6 +59,9 @@ export function ContactUs() {
   }
 
 
+  const btnIsDisabled = () => {
+    return errors.length || state?.values().some(value => !value.lengt);
+  }
 
   const handleSubmit = useCallback((e) => { console.log(123);}, [])
 
@@ -78,7 +81,6 @@ export function ContactUs() {
       case 'firstName':
       case 'lastName':
         if (value.trim().length < 2) {
-          console.log(123123123123);
           setErrors(prev => [...prev, name])
         }
       default:
@@ -177,12 +179,14 @@ export function ContactUs() {
           />
         </div>
 
-        <button disabled  onSubmit={handleSubmit}> Send message </button>
+        <button disabled={btnIsDisabled}  onSubmit={handleSubmit}> Send message </button>
       </form>
     </div>
   );
 }
 
+
+export default ContactUs;
 
 
 // const Input = (title, htmlFor, type, placeholder, name, id, handleChange) => {

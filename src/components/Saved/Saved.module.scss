@@ -1,0 +1,27 @@
+.links {
+  position: sticky;
+  top: 0;
+  display: flex;
+  gap: 16px;
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
+.link {
+  cursor: pointer;
+  font-size: 14px;
+  opacity: .3;
+  border: 1px solid #00000000;
+  // color: rgba(168, 176, 185, 1);
+
+}
+
+.active {
+  opacity: 1;
+  border-bottom: 1px solid #000;
+  pointer-events: none;
+}
+
+
+
+

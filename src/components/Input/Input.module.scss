@@ -1,0 +1,50 @@
+@import '../../utils/styles/variables.scss';
+
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: min-content;
+
+  &>[type="tel"],
+  [type="email"] {
+    width: 100%;
+  }
+
+  &>label {
+    cursor: pointer;
+    width: max-content;
+    margin-bottom: 12px;
+  }
+
+  &>input {
+    height: 50px;
+    width: 245px;
+    padding-left: 20px;
+    font-size: 16px;
+    border: 1px solid $BORDER_COLOR;
+
+    &:focus {
+      border-color: rgb(195, 195, 195);
+      outline: none;
+    }
+
+    &--error {
+      border: 1px solid #f28585;
+    }
+  }
+
+  &>textarea {
+    resize: none;
+    height: 120px;
+    width: 510px;
+    border: 1px solid $BORDER_COLOR;
+    padding: 5px;
+
+
+    &:focus {
+      border-color: rgb(195, 195, 195);
+      outline: none;
+    }
+  }
+}

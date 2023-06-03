@@ -6,6 +6,7 @@
   flex-direction: column;
   width: 240px;
   height: 100%;
+  padding-top: 15px;
   border-right: 1px solid $BORDER_COLOR;
 
   &__links {
@@ -23,6 +24,7 @@
     }
 
   }
+
   &__link {
     all: unset;
     display: flex;
@@ -36,7 +38,7 @@
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: 26px center;
-    
+
     &--active {
       background-color: #d2e0d6;
       border-right: 4px solid #4CAD66;
@@ -45,6 +47,7 @@
 
   &__auth {
     height: 90px;
+    padding: 25px;
   }
 
 }

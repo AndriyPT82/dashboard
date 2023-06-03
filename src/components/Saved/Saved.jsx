@@ -1,46 +1,42 @@
-import React from "react";
-import { CardGallery } from "../CardGallery/CardGallery";
-import { handleSelectedLink } from "../../utils/assets/handleSelectedLink";
-import './Saved.scss';
-import { NavLink } from "react-router-dom";
+import { useEffect, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
+import { CardGallery } from "../index";
+import s from './Saved.module.scss';
+
+const isActive = (query, value) => (
+  `${s.link} ${query === value ? s.active : ''}`
+);
+
+const links = ['All', 'Templated', 'Downloads']
 
 
+function Saved({ cards, title = "Saved" }) {
 
-export function Saved({ cards, title = "Saved" }) {
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const currentQuery = (query) => setSearchParams({ query })
+  const searchParam = useMemo(() => searchParams.get('query'), [searchParams])
+
+  useEffect(() => {
+    currentQuery(links[0].toLowerCase())
+  }, [])
+
   return (
     <>
-<div className="saved__links">
-        <NavLink
-          to={'/all'}
-          className={({ isActive }) => handleSelectedLink(isActive, 'saved__link')}
-        > All </NavLink>
-        <NavLink
-          to={'/templated'}
-          className={({ isActive }) => handleSelectedLink(isActive, 'saved__link')}
-        > Templated </NavLink>
-        <NavLink
-          to={'/downloades'}
-          className={({ isActive }) => handleSelectedLink(isActive, 'saved__link')}
-        > Downloads </NavLink>
+      <div className={s.links}>
+        {links.map(title => {
+          const lowerTitle = title.toLowerCase()
+          return <button
+            key={title}
+            className={isActive(searchParam, lowerTitle)}
+            onClick={() => currentQuery(lowerTitle)}
+          > {title} </button>
+        })}
       </div>
-
       <CardGallery cards={cards} title="Saved Tile" />
       <CardGallery cards={cards} title="Saved Rooms" />
     </>
   );
 }
 
-{/* <div className="saved__links">
-        <NavLink
-          to={'/all'}
-          className={({ isActive }) => handleSelectedLink(isActive, 'saved__link')}
-        > All </NavLink>
-        <NavLink
-          to={'/templated'}
-          className={({ isActive }) => handleSelectedLink(isActive, 'saved__link')}
-        > Templated </NavLink>
-        <NavLink
-          to={'/downloades'}
-          className={({ isActive }) => handleSelectedLink(isActive, 'saved__link')}
-        > Downloads </NavLink>
-      </div> */}
+export default Saved;

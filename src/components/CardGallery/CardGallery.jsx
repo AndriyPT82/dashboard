@@ -1,20 +1,19 @@
-import React from "react";
+import {Fragment} from "react";
 import { v4 as uuidv4 } from 'uuid';
-import './CardGallery.scss';
-import { Card } from "../Card/Card";
+import s from './CardGallery.module.scss';
+import { Card } from "../index";
 
 
-export function CardGallery({ cards, title }) {
+function CardGallery({ cards, title }) {
   return (
-    <div className="card-gallery">
-      <h2 className="card-gallery__title">{title}</h2>
-      <div className="card-gallery__cards-wrapper" >
-        <div className="card-gallery__cards">
-
-          {new Array(8).fill(1).map((card) => (
-            <React.Fragment key={uuidv4()}>
+    <div className={s.container}>
+      <h2 className={s.title}>{title}</h2>
+      <div className={s.cards_wrapper} >
+        <div className={s.cards}>
+          {new Array(5).fill(1).map((card) => (
+            <Fragment key={uuidv4()}>
               <Card card={card} />
-            </React.Fragment>
+            </Fragment>
           ))}
         </div>
       </div>
@@ -22,3 +21,4 @@ export function CardGallery({ cards, title }) {
   );
 }
 
+export default CardGallery;

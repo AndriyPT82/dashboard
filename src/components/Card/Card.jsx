@@ -1,18 +1,19 @@
 import React from "react";
-import './Card.scss';
+import './Card.module.scss';
 import { Link } from "react-router-dom";
+import s from './Card.module.scss'
 
-export function Card({image, title, description,}) {
+function Card({image, title, description,}) {
   return (
-    <li className="card">
-      <div className="card__image"></div>
-      <div className="card__info">
-        <h3 className="card__title">Bathroom</h3>
-        <h5 className="card__description">Created 23.08.2022</h5>
+    <li className={s.container}>
+      <div className={s.image}></div>
+      <div className={s.info}>
+        <h3 className={s.title}>Bathroom</h3>
+        <h5 className={s.description}>Created 23.08.2022</h5>
       </div>
-      <Link to={'/'} className="card__link" > View project </Link>
-
+      <Link to={'/view_project'} className={s.link} > View project </Link>
     </li>
   );
 }
 
+export default Card;
