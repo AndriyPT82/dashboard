@@ -8,14 +8,17 @@
 }
 
 .link {
+  color: rgb(79, 91, 103, 1);
+
+  padding: 8px 12px ;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
-  opacity: .3;
   border: 1px solid #00000000;
 }
 
 .active {
-  opacity: 1;
-  border-bottom: 1px solid #000;
+  color: #fff;
+  background: rgba(112, 189, 133, 1);
   pointer-events: none;
 }

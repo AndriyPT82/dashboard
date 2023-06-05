@@ -3,20 +3,15 @@
   flex-direction: column;
   flex-grow: 1;
   overflow: scroll;
-  min-height: 500px;
-  
 
   &::-webkit-scrollbar {
-    width: 0 !important
+    width: 10px !important
   }
 }
 
 .cards_wrapper {
-  // display: flex;
   overflow: auto;
-
- 
-
+  height: 100%;
   &::-webkit-scrollbar {
     width: 0 !important
   }

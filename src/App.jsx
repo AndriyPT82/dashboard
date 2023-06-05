@@ -4,22 +4,21 @@ import {
   Sidebar,
   DashboardHeader,
   Projects,
-  Saved,
+  Uploads,
   ContactUs,
   ViewProject,
   AccountDetails,
-  TestPage
+  TestPage,
+  Settings
 } from './components'
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setUser } from 'features/user/userSlice';
 import s from './App.module.scss';
-import Settings from 'components/Settings/Settings';
-import { useEffect, useState } from 'react';
-
-
-
 
 function App() {
 
-  const [user, setUser] = useState(null)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     fetch('user.json', {
@@ -29,8 +28,9 @@ function App() {
       }
     })
       .then(res => res.json())
-      .then(setUser)
-
+      .then(data => {
+        dispatch(setUser(data))
+      })
   }, [])
 
   return (
@@ -43,7 +43,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Dashboard />} />
               <Route path='projects' element={<Projects />} />
-              <Route path='saved' element={<Saved />} />
+              <Route path='uploads' element={<Uploads />} />
               <Route path='help_center' element={<ContactUs />} />
               <Route path='view_project' element={<ViewProject />} />
               <Route path='account_details' element={<AccountDetails />} />
@@ -58,6 +58,3 @@ function App() {
 }
 
 export default App;
-
-
-

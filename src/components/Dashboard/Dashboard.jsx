@@ -1,7 +1,10 @@
 import { dollar_icon, phone_icon, saved2_icon } from 'utils/icons/index'
 import { photos, photo1 } from 'utils/images';
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
+
 import s from './Dashboard.module.scss';
+import { useEffect } from 'react';
 
 const links = [
   { path: 'test_page', title: 'Pricing plans', icon: dollar_icon },
@@ -10,9 +13,12 @@ const links = [
 ]
 
 function Dashboard({ name = "James" }) {
+
+  const user = useSelector(state => state)
+  console.log(user);
   return (
     <div className={s.container}>
-      <h1 className={s.welcome}> Welcome back, {name}!</h1>
+      <h1 className={s.welcome}> Welcome back, {"firstName"}!</h1>
       <div className={s.images}>
         <img src={photo1} className={s.main_image} alt="main-img" />
         <div className={s.image_container}>

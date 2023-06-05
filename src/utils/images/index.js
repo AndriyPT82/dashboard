@@ -5,7 +5,9 @@ import photo4 from './photo4.png'
 import photo5 from './photo5.png'
 import james_franco from './james_franco.png'
 
-export {photo1, james_franco }
+import tile_TEST from './tile_TEST.png'
+
+export {photo1, james_franco, tile_TEST }
 export const photos = [
   photo2,
   photo3,

@@ -1,13 +1,16 @@
 import React from "react";
 import { CardGallery } from "../index";
 import s from './Projects.module.scss'
+import { useSelector } from "react-redux";
 
- function Projects({ cards, title=" My Projects" }) {
+function Projects() {
+
+  const projects = useSelector(state => state.user?.projects)
+
   return (
     <div className={s.container}>
-
-    <CardGallery cards={cards} title={title} />
-  </div>
+      {!!projects && <CardGallery cards={projects.data} title={projects.title} />}
+    </div>
   );
 }
 
