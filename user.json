@@ -1,12 +1,73 @@
 {
-  "user": {
-    "id": "1",
-    "firstName": "James",
-    "lastName": "Franco",
-    "image": "utils/images/james_franco.png",
-    "email": "james@gmail.com",
-    "tel": "310-685-3335",
-    "pricingPlans": []
-  
+  "id": "1",
+  "firstName": "James",
+  "lastName": "Franco",
+  "image": "utils/images/james_franco.png",
+  "email": "james@gmail.com",
+  "tel": "310-685-3335",
+  "pricingPlans": [],
+  "projects": {
+    "title": "My Projects",
+    "data": [
+      "project",
+      "project",
+      "project",
+      "project",
+      "project"
+    ]
+  },
+  "uploads": {
+    "tile": {
+      "name": "Tile",
+      "list": [
+        "product",
+        "product",
+        "product",
+        "product",
+        "product"
+      ]
+    },
+    "paint": {
+      "name": "Paint",
+      "list": [
+        "product",
+        "product",
+        "product",
+        "product",
+        "product",
+        "product",
+        "product"
+      ]
+    },
+    "hardwood": {
+      "name": "Hardwood",
+      "list": [
+        "product",
+        "product"
+      ]
+    },
+    "carpet slab": {
+      "name": "Carpet slab",
+      "list": [
+        "product",
+        "product",
+        "product",
+        "product"
+      ]
+    },
+    "vinyl": {
+      "name": "Vinyl",
+      "list": [
+        "product",
+        "product",
+        "product",
+        "product",
+        "product",
+        "product",
+        "product",
+        "product",
+        "product"
+      ]
+    }
   }
 }
