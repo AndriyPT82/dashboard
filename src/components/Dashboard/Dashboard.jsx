@@ -1,10 +1,8 @@
-import { dollar_icon, phone_icon, saved2_icon } from 'utils/icons/index'
+import { dollar_icon, phone_icon, saved2_icon } from 'utils/icons'
 import { photos, photo1 } from 'utils/images';
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
-
 import s from './Dashboard.module.scss';
-import { useEffect } from 'react';
 
 const links = [
   { path: 'test_page', title: 'Pricing plans', icon: dollar_icon },
@@ -12,20 +10,20 @@ const links = [
   { path: 'test_page', title: 'Saved pictures', icon: saved2_icon }
 ]
 
-function Dashboard({ name = "James" }) {
+function Dashboard() {
 
-  const user = useSelector(state => state)
-  console.log(user);
+  const user = useSelector(state => state.user)
+
   return (
     <div className={s.container}>
-      <h1 className={s.welcome}> Welcome back, {"firstName"}!</h1>
+      <h1 className={s.welcome}> Welcome back, {user.firstName }!</h1>
       <div className={s.images}>
         <img src={photo1} className={s.main_image} alt="main-img" />
         <div className={s.image_container}>
           {
-            photos.map(photo => (
+            photos.map((photo, i) => (
               <img
-                key={photo}
+                key={'test_page'+i}
                 src={photo}
                 width="264"
                 height="180"
@@ -54,7 +52,7 @@ function Dashboard({ name = "James" }) {
               links.map(({ path, title, icon }) => (
                 <Link
                   to={path}
-                  key={path}
+                  key={title}
                   className={s.link}
                   style={{ backgroundImage: `url(${icon})` }}
                 >

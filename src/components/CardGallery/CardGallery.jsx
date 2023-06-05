@@ -6,8 +6,10 @@ import { Card } from "../index";
 
 function CardGallery({ cards, title }) {
 
+  const offSet = cards.length > 3 ? 80 : 0
+
   return (
-    <div className={s.container} style={{ minHeight: `${500}px` }} >
+    <div className={s.container} style={{ minHeight: `${500 + offSet}px` }} >
       <h3>{title}</h3>
       <div className={s.cards_wrapper} >
         <div className={s.cards}>

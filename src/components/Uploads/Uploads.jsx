@@ -9,9 +9,8 @@ const isActive = (query, value) => (
 );
 
 const links = [
-  'All', 'Tile', 'Paint', 'Hardwood', 'Carpet Slab', 'Vinyl'
+  'Tile', 'Paint', 'Hardwood', 'Carpet Slab', 'Vinyl'
 ];
-
 function Uploads() {
 
   const [searchParams, setSearchParams] = useSearchParams()
@@ -20,34 +19,37 @@ function Uploads() {
   const searchParam = useMemo(() => searchParams.get('query'), [searchParams])
 
 
-  useEffect(() => {
-    currentQuery('all')
-    // currentQuery(links[0].toLowerCase())
-  }, [])
-
   const uploads = useSelector(state => {
-    console.log(searchParam, state);
     return state.user.uploads || {}
   }
   )
 
-
+  console.log(searchParam);
 
   return (
     <>
       <div className={s.links}>
-        {links.map(title => {
-          const lowerTitle = title.toLowerCase()
-          return <button
-            key={title}
-            className={isActive(searchParam, lowerTitle)}
-            onClick={() => currentQuery(lowerTitle)}
-          > {title} </button>
-        })}
+        <button
+          key={'all'}
+          className={isActive(searchParam, null)}
+          onClick={() => searchParams.delete('query')}
+        >
+          {'All'}
+        </button>
+        {
+          links.map(title => {
+            const lowerTitle = title.toLowerCase()
+            return <button
+              key={title}
+              className={isActive(searchParam, lowerTitle)}
+              onClick={() => currentQuery(lowerTitle)}
+            > {title} </button>
+          })
+        }
       </div>
 
       {/* <FilterContainer > */}
-        {/* <>
+      {/* <>
           {links.map(title => {
             const lowerTitle = title.toLowerCase()
             return <button
