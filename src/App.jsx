@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import {
   Dashboard,
   Sidebar,
@@ -32,7 +32,6 @@ function App() {
       .then(setUser)
 
   }, [])
-
 
   return (
     <HashRouter>
