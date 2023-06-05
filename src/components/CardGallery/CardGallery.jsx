@@ -7,7 +7,7 @@ import { Card } from "../index";
 function CardGallery({ cards, title }) {
   return (
     <div className={s.container}>
-      <h2 className={s.title}>{title}</h2>
+      <h3>{title}</h3>
       <div className={s.cards_wrapper} >
         <div className={s.cards}>
           {new Array(5).fill(1).map((card) => (

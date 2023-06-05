@@ -12,11 +12,28 @@ import {
 } from './components'
 import s from './App.module.scss';
 import Settings from 'components/Settings/Settings';
+import { useEffect, useState } from 'react';
 
 
 
 
 function App() {
+
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    fetch('user.json', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+      .then(res => res.json())
+      .then(setUser)
+
+  }, [])
+
+
   return (
     <HashRouter>
       <div className={s.App}>

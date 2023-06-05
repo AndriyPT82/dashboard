@@ -2,24 +2,24 @@ import s from './Input.module.scss'
 
 function Input({
   title,
-  type='text',
   value='',
-  placeholder='',
+  placeholder=``,
   name='',
   id='',
+  cls='',
   isDisabled=false,
   handleFocus,
   handleChange
 }) {
   return (
-    <div className={s.input}>
+    <div className={s.input_container}>
       <label htmlFor={id}>{title}</label>
       <input
-        type={type}
         value={value}
         placeholder={placeholder}
         name={name}
         id={id}
+        className={s[id]}
         style={{
           // borderColor: checkForError(errors, 'firstName')
         }}

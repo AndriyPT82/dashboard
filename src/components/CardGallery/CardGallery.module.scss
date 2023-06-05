@@ -4,26 +4,21 @@
   flex-grow: 1;
   overflow: scroll;
   min-height: 500px;
-  min-height: fit-content;
   
 
   &::-webkit-scrollbar {
-    width: 0em;
+    width: 0 !important
   }
 }
 
-
-
-.title {
-  margin-bottom: 24px;
-}
-
 .cards_wrapper {
-  display: flex;
+  // display: flex;
   overflow: auto;
 
+ 
+
   &::-webkit-scrollbar {
-    background-color: transparent;
+    width: 0 !important
   }
 }
 

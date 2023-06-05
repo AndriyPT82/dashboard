@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import './ContactUs.scss';
+import s from './ContactUs.module.scss';
+import Input from "components/Input/Input";
 
 // const validateNameLastName = (fieldName, str) => {
 
@@ -63,7 +64,7 @@ function ContactUs() {
     return errors.length || state?.values().some(value => !value.lengt);
   }
 
-  const handleSubmit = useCallback((e) => { console.log(123);}, [])
+  const handleSubmit = useCallback((e) => { console.log(123); }, [])
 
   const handleBlur = useCallback((e) => {
     const { name, value } = e.target;
@@ -95,92 +96,42 @@ function ContactUs() {
     }
   }
 
+  const inputFilds = [
+
+    { title: 'First Name', key: 'firstName', placeholder: 'First Name' },
+    { title: 'Last Name', key: 'lastName', placeholder: 'Last Name' },
+    { title: 'E-mail', key: 'email', placeholder: 'email' },
+    { title: 'Phone number', key: 'tel', placeholder: "+1 (666) 000-0000" },
+
+  ]
+
   return (
-    <div className="contact-us">
-      <h2 className="contact-us__title">Contact Us</h2>
-      <h4 className="contact-us__subtitle">Our friendly team would love to hear from you!</h4>
-      <form className="contact-us__form">
-        <div className="contact-us__personal-data">
-
-          <div className="contact-us__input">
-            <label htmlFor="firstName">First Name</label>
-            <input
-              type="text"
-              value={state.firstName}
-              placeholder="First Name"
-              name="firstName"
-              id="firstName"
-              style={{
-                borderColor: checkForError(errors, 'firstName')
-              }}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="contact-us__input">
-            <label htmlFor="lasttName">Last Name</label>
-            <input
-              type="text"
-              value={state.lastName}
-              placeholder="Last Name"
-              name="lastName"
-              id="lastName"
-              style={{
-                borderColor: checkForError(errors, 'lastName')
-              }}
-              onFocus={handleFocus}
-              onBlur={handleBlur}
-              onChange={handleChange}
-            />
-          </div>
-        </div>
-
-        <div className="contact-us__input">
-          <label htmlFor="email">E-mail</label>
-          <input
-            type="email"
-            value={state.email}
-            placeholder="email"
-            name="email"
-            id="email"
-            style={{
-              borderColor: checkForError(errors, 'email')
-            }}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onChange={handleChange}
+    <div className={s.container}>
+      <h2 className={s.title}>Contact Us</h2>
+      <h4 className={s.subtitle}>Our friendly team would love to hear from you!</h4>
+      <div className={s.form}>
+        {inputFilds.map(({ title, key, placeholder }) => (
+          <Input
+            title={title}
+            value={state[key]}
+            placeholder={placeholder}
+            name={key}
+            id={key}
+            cls={`s.${[key]}`}
+            handleFocus={handleFocus}
+            handleChange={handleChange}
           />
-        </div>
-
-        <div className="contact-us__input">
-          <label htmlFor="tel">Phone number</label>
-          <input
-            type="tel"
-            placeholder="+1 (666) 000-0000"
-            name="tel"
-            id="tel"
-            style={{
-              borderColor: checkForError(errors, 'tel')
-            }}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            onFocus={handleFocus}
-          />
-        </div>
-
-        <div className="contact-us__input">
-          <label htmlFor="text">Message</label>
+        ))}
+        <div className={s.textarea_block}>
+          <label htmlFor="textarea">Message</label>
           <textarea rows="4" cols="50"
-            type="text" resiz='none'
-            name="text"
-            id="text"
+            name="textarea"
+            id="textarea"
           />
         </div>
 
-        <button disabled={btnIsDisabled}  onSubmit={handleSubmit}> Send message </button>
-      </form>
+        <button disabled={btnIsDisabled} onSubmit={handleSubmit}> Send message </button>
+      </div>
     </div>
   );
 }

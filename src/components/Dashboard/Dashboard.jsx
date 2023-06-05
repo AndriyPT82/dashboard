@@ -12,7 +12,7 @@ const links = [
 function Dashboard({ name = "James" }) {
   return (
     <div className={s.container}>
-      <h2 className={s.welcome}> Welcome back, {name}!</h2>
+      <h1 className={s.welcome}> Welcome back, {name}!</h1>
       <div className={s.images}>
         <img src={photo1} className={s.main_image} alt="main-img" />
         <div className={s.image_container}>

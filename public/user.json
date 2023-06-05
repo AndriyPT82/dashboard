@@ -1,0 +1,12 @@
+{
+  "user": {
+    "id": "1",
+    "firstName": "James",
+    "lastName": "Franco",
+    "image": "utils/images/james_franco.png",
+    "email": "james@gmail.com",
+    "tel": "310-685-3335",
+    "pricingPlans": []
+  
+  }
+}
