@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { CardGallery, FilterContainer } from "../index";
 import s from './Uploads.module.scss';
@@ -32,7 +32,11 @@ function Uploads() {
         <button
           key={'all'}
           className={isActive(searchParam, null)}
-          onClick={() => searchParams.delete('query')}
+          onClick={() => {
+            console.log(searchParam);
+            searchParams.delete(`query`)
+            setSearchParams(searchParams);
+          }}
         >
           {'All'}
         </button>
@@ -60,6 +64,7 @@ function Uploads() {
           })}
         </> */}
       {/* </FilterContainer> */}
+
       {
         !!uploads &&
           uploads[searchParam]
