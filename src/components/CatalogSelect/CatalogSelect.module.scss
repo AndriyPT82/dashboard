@@ -1,26 +1,44 @@
+@import '../../utils/styles/variables.scss';
+
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  min-width: 162px;
-
-  width: max-content;
-  // border: 1px solid #000;
+  width: 220px;
 }
 
 .select {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
   height: 40px;
-  border: 1px solid #cbd868;
+  border: 1px solid $BORDER_COLOR;
+  border-radius: 4px;
+  color: rgb(79, 91, 103);
+  padding-left: 10px;
 }
 
 .selected_block {
   display: flex;
   flex-wrap: wrap;
-  max-width: 200px;
-  width: max-content;
   gap: 12px;
-  // border: 1px solid #e31c1c;
-;
+}
+
+.options {
+  position: absolute;
+  top: 45px;
+  width: 100%;
+  border: 1px solid $BORDER_COLOR;
+  border-radius: 4px;
+
+  background-color: #fff;
+}
+
+.option {
+  height: 40px;
+  padding-left: 10px;
+  border-bottom: 1px solid $BORDER_COLOR;
 }
 
 
@@ -33,10 +51,15 @@
   // border: 1px solid #000;
 
   &>label {
+    position: relative;
     display: flex;
     align-items: center;
+
     margin: 0;
     cursor: pointer;
+    color: rgb(150, 150, 150);
+    ;
+    font-size: 14px;
 
     &::before {
       content: attr(data-checked);
@@ -45,7 +68,7 @@
       justify-content: center;
       color: white;
       position: absolute;
-      left: 0px;
+      left: -22px;
       height: 14px;
       width: 14px;
       border-radius: 2px;

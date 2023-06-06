@@ -1,76 +1,102 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import dropbown_icon from 'utils/icons/dropbown_icon.svg'
+import { v4 as uuidv4 } from "uuid";
 
 import s from './CatalogSelect.module.scss';
 
 
-const options = []
 
-const CatalogSelect = () => {
+
+const CatalogSelect = ({title = 'Brand', data=[], id}) => {
 
   const [isActive, setIsActive] = useState(false);
 
-  const [selected, setSelected] = useState([
-    'apple'
-  ]);
+  const [selected, setSelected] = useState([]);
 
-  const onRemoveSelected = (e) => {
-    const value = e.target.value;
+  // const onRemoveSelected = (e) => {
+  //   const value = e.target.value;
 
-    setSelected(prev => (
-      prev.filter(item => item !== value)
-    ))
-  }
+  //   console.dir(e.target);
+  //   const arr = selected.filter(item => item !== value)
+  //   setSelected(arr)
+  // }
 
   return (
-    <div className={s.container}>
-      <div className={s.select}>
-        {/* <div
-          onClick={(e) => setIsActive(!isActive)}
-          className={selected === 'Choose one' ? s.link : `${s.link} ${s.active}`}
-          // style={{ backgroundImage: `url(${dropbown_icon})` }}
-        > */}
-        Brand
+    <div
+      className={s.container}
+      tabIndex={0}
+      onBlur={() => { setIsActive(false) }}
+    >
+      <div className={s.select}
+        onClick={(e) => setIsActive(!isActive)}
+      >
+        {/* <div> */}
+        {title}
         {/* </div> */}
       </div>
 
       <ul className={s.selected_block}>
         {
-          selected.map(item => (
-            <li className={s.checkbox_container}>
+          selected.map((item,i) => {
+            return (
+              <li
+                className={s.checkbox_container}
+                key={uuidv4()}
+              >
+                <input
+                  className={s.checkbox}
+                  type='checkbox'
+                  id={`#checkbox${i+id}`}
+                  value={item}
+                  onClick={() => {
+                    setSelected(prev => (
+                      prev.filter(value => value !== item)
+                    ))
+                  }}
+                />
+                <label
+                  htmlFor={`#checkbox${i+id}`}
+                  data-checked={selected.includes(item) ? '✓' : ''}
+                >{item}</label>
+              </li>
+            )
+          })
+        }
+
+
+
+      </ul>
+
+      <div
+        className={s.options}
+        style={{ display: isActive ? "block" : "none" }}
+      >
+        {
+          data.map((item, i) => (
+
+            <li
+              className={`${s.checkbox_container} ${s.option} `}
+              onClick={() => {
+                setSelected(prev => {
+                  if (selected.includes(item)) {
+                    return selected.filter(value => value !== item)
+                  } else {
+                    return [...prev, item]
+                  }
+                })
+              }}
+              key={uuidv4()}
+            >
               <input
                 className={s.checkbox}
                 type='checkbox'
-                id='#checkbox'
+                id={`#checkbox${id + i}`}
                 value={item}
-                onClick={onRemoveSelected}
               />
-              <label htmlFor='#checkbox' data-checked={selected.includes(item) ? '✓' :''}>apple</label>
+              <label htmlFor={`#checkbox${id + i}`} data-checked={selected.includes(item) ? '✓' : ''} >{item}</label>
             </li>
+
           ))
         }
-      </ul>
-
-
-      <div style={{ display: isActive ? "block" : "none" }}>
-        {/* {
-          options.map(({ path, title, icon }, index) => (
-            <li className={s.link_wrapper} key={index} tabIndex={0}>
-              <NavLink
-                to={path}
-                style={{ backgroundImage: `url(${icon})` }}
-                onClick={(e) => {
-                  setIsSelected(e.target.textContent);
-                  setIsActive(!isActive);
-                }}
-              >
-                {title}
-              </NavLink>
-            </li>
-          ))
-        } */}
-
       </div>
     </div>
   )
