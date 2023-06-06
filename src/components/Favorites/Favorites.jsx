@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
-import s from './Catalog.module.scss';
-import { CardGallery, CatalogSelect, FilterContainer } from 'components';
+import s from './Favorites.module.scss';
+import { CardGallery, FilterContainer } from 'components';
 
 
 const links = ['paint', 'grout color'];
 
-function Catalog() {
+function Favorites() {
 
   const uploads = useSelector(state => {
     return state.user.uploads || {}
@@ -15,8 +15,7 @@ function Catalog() {
   return (
     <>
     <FilterContainer>
-      <h3>Catalog</h3>
-      {/* <CatalogSelect /> */}
+      <h3>Favorites</h3>
     </FilterContainer>
       {
 
@@ -28,4 +27,4 @@ function Catalog() {
   );
 }
 
-export default Catalog;
+export default Favorites;

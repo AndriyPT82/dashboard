@@ -5,11 +5,14 @@ import {
   DashboardHeader,
   Projects,
   Uploads,
+  Textures,
   ContactUs,
   ViewProject,
   AccountDetails,
   TestPage,
-  Settings
+  Settings,
+  Catalog,
+  Favorites
 } from './components'
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -44,6 +47,9 @@ function App() {
               <Route path='/' element={<Dashboard />} />
               <Route path='projects' element={<Projects />} />
               <Route path='uploads' element={<Uploads />} />
+              <Route path='catalog' element={<Catalog />} />
+              <Route path='favorites' element={<Favorites />} />
+              <Route path='textures' element={<Textures />} />
               <Route path='help_center' element={<ContactUs />} />
               <Route path='view_project' element={<ViewProject />} />
               <Route path='account_details' element={<AccountDetails />} />

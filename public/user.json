@@ -17,6 +17,16 @@
     ]
   },
   "uploads": {
+    "grout color": {
+      "name": "Grout color",
+      "list": [
+        "product",
+        "product",
+        "product",
+        "product",
+        "product"
+      ]
+    },
     "tile": {
       "name": "Tile",
       "list": [
@@ -49,6 +59,18 @@
     "carpet slab": {
       "name": "Carpet slab",
       "list": [
+        "product",
+        "product",
+        "product",
+        "product"
+      ]
+    },
+    "carpet": {
+      "name": "Carpet",
+      "list": [
+        "product",
+        "product",
+        "product",
         "product",
         "product",
         "product",

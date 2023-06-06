@@ -1,0 +1,37 @@
+.container {
+    margin: 0 auto;
+    z-index: 10000;
+    width: 100%;
+    position: relative;
+    order: 1;
+}
+
+.link_wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 48px;
+    // order: 1;
+
+    &:first-child {
+        margin-bottom: 3px;
+    }
+}
+
+.link {
+    all: unset;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    padding-left: 70px;
+    height: 100%;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 26px center;
+}
+
+.active {
+    // pointer-events: none;
+    background-color: #d2e0d6;
+    border-right: 4px solid #4CAD66;
+}

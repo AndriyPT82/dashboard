@@ -12,7 +12,7 @@ function DashboardHeader() {
 
       <div className={s.logo_block}>
         <Link onClick={() => { console.log('Redirect to Home Page') }} >
-          <img src={logo} alt="dashboard-logo" />
+          <img src={logo} alt="dashboard logo" />
         </Link>
       </div>
       <div className={s.buttons}>
