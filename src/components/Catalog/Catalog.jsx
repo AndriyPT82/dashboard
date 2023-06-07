@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import s from './Catalog.module.scss';
-import { CardGallery, CatalogSelect, FilterContainer } from 'components';
+import { CardGallery, CatalogSelect, FilterContainer, Search } from 'components';
 
 
 const titleBrands = ['Apple', 'Google', 'Ford', 'Trek', 'Rolex']
@@ -10,56 +10,66 @@ const titleTypes = ['Tile', 'Carpet Slab', 'Hardwood', 'Vinyl', 'Paint']
 const brands = {
   'Apple': {
     name: "Apple",
-    list:[
-    'product', 'product', 'product', 'product',
-  ]},
+    list: [
+      'product', 'product', 'product', 'product',
+    ]
+  },
   'Google': {
     name: "Google",
-    list:[
-    'product', 'product', 'product', 'product',
-  ]},
+    list: [
+      'product', 'product', 'product', 'product',
+    ]
+  },
   'Ford': {
     name: "Ford",
-    list:[
-    'product', 'product', 'product', 'product',
-  ]},
+    list: [
+      'product', 'product', 'product', 'product',
+    ]
+  },
   'Trek': {
     name: "Trek",
-    list:[
-    'product', 'product', 'product', 'product',
-  ]},
+    list: [
+      'product', 'product', 'product', 'product',
+    ]
+  },
   'Rolex': {
     name: "Rolex",
-    list:[
-    'product', 'product', 'product', 'product',
-  ]}
+    list: [
+      'product', 'product', 'product', 'product',
+    ]
+  }
 }
 const types = {
   'Tile': {
     name: "Tile",
-    list:[
-    'product', 'product', 'product', 'product',
-  ]},
+    list: [
+      'product', 'product', 'product', 'product',
+    ]
+  },
   'Carpet Slab': {
     name: "Carpet Slab",
-    list:[
-    'product', 'product', 'product', 'product',
-  ]},
+    list: [
+      'product', 'product', 'product', 'product',
+    ]
+  },
   'Hardwood': {
     name: "Hardwood",
-    list:[
-    'product', 'product', 'product', 'product',
-  ]},
+    list: [
+      'product', 'product', 'product', 'product',
+    ]
+  },
   'Vinyl': {
     name: "Vinyl",
-    list:[
-    'product', 'product', 'product', 'product',
-  ]},
+    list: [
+      'product', 'product', 'product', 'product',
+    ]
+  },
   'Paint': {
     name: "Paint",
-    list:[
-    'product', 'product', 'product', 'product',
-  ]}
+    list: [
+      'product', 'product', 'product', 'product',
+    ]
+  }
 }
 
 const links = ['paint', 'grout color'];
@@ -76,14 +86,18 @@ function Catalog() {
   return (
     <>
       <FilterContainer>
-        <h3>Catalog</h3>
+        <div className={s.wrapper}>
+          <h3>Catalog</h3>
+          <Search />
+        </div>
+
         <div className={s.container}>
           <CatalogSelect
             title={'Brand'}
             data={titleBrands}
             id={'brand'}
             selected={selectedBrands}
-            setSelected={setSelectedBrands }
+            setSelected={setSelectedBrands}
           />
           <CatalogSelect
             title={'Type'}
@@ -91,7 +105,6 @@ function Catalog() {
             id={'type'}
             selected={selectedTypes}
             setSelected={setSelectedTypes}
-
           />
         </div>
 
@@ -108,9 +121,9 @@ function Catalog() {
         )))
 
         // Object.keys(uploads).filter(key => links.includes(key)).map(key => (
-          //   <CardGallery cards={uploads[key].list} title={uploads[key].name} />
-          // ))
-        }
+        //   <CardGallery cards={uploads[key].list} title={uploads[key].name} />
+        // ))
+      }
 
     </>
   );

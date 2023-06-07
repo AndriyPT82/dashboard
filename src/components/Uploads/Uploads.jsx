@@ -1,8 +1,9 @@
 import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
-import { CardGallery, FilterContainer } from "../index";
-import { useSelector } from "react-redux";
-import UploadsNav from "components/UploadsNav/UploadsNav";
+import { CardGallery, FilterContainer, Search, UploadsNav } from "../index";
+import { useSelector } from "react-redux"
+
+import s from './Uploads.module.scss'
 
 
 
@@ -21,12 +22,20 @@ function Uploads() {
   return (
     <>
       <FilterContainer >
-        <UploadsNav
-          title="Uploads"
-          searchParam={searchParam}
-          searchParams={searchParams}
-          setSearchParams={setSearchParams}
-        />
+        <div className={s.wrapper}>
+
+          <UploadsNav
+            title="Uploads"
+            searchParam={searchParam}
+            searchParams={searchParams}
+            setSearchParams={setSearchParams}
+          />
+
+
+          <Search />
+
+        </div>
+
       </FilterContainer>
 
       {

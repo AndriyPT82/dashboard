@@ -4,10 +4,10 @@ import DropdownSidebar from './DropdownSidebar/DropdownSidebar';
 import DashboardHeader from './DashboardHeader/DashboardHeader';
 import Projects from './Projects/Projects';
 import Uploads from './Uploads/Uploads';
+import UploadsNav from './UploadsNav/UploadsNav';
 import Catalog from './Catalog/Catalog';
 import CatalogSelect from './CatalogSelect/CatalogSelect';
 import Favorites from './Favorites/Favorites';
-import Textures from './Textures/Textures';
 import ContactUs from './ContactUs/CuntactUs';
 import CardGallery from './CardGallery/CardGallery';
 import Card from './Card/Card';
@@ -16,6 +16,7 @@ import AccountDetails from './AccountDetails/AccountDetails';
 import SmallAccountDetails from './SmallAccountDetails/SmallAccountDetails';
 import Settings from './Settings/Settings';
 import FilterContainer from './FilterContainer/FilterContainer';
+import Search from './Search/Search';
 import TestPage from './TestPage';
 
 export {
@@ -25,10 +26,10 @@ export {
   DashboardHeader,
   Projects,
   Uploads,
+  UploadsNav,
   Catalog,
   CatalogSelect,
   Favorites,
-  Textures,
   ContactUs,
   CardGallery,
   Card,
@@ -37,5 +38,6 @@ export {
   SmallAccountDetails,
   Settings,
   FilterContainer,
+  Search,
   TestPage
 }

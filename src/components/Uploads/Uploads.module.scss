@@ -1,24 +1,4 @@
-// .links {
-//   display: flex;
-//   position: sticky;
-//   top: 0px;
-//   gap: 16px;
-//   background-color: #fff;
-//   // padding: 20px 0px 30px;
-// }
-
-// .link {
-//   color: rgb(79, 91, 103, 1);
-
-//   padding: 8px 12px ;
-//   border-radius: 8px;
-//   cursor: pointer;
-//   font-size: 18px;
-//   border: 1px solid #00000000;
-// }
-
-// .active {
-//   color: #fff;
-//   background: rgba(112, 189, 133, 1);
-//   pointer-events: none;
-// }
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}

@@ -3,9 +3,11 @@
     flex-direction: column;
     position: sticky;
     top: 0px;
-    // gap: 24px;
     background-color: #fff;
     padding: 30px 0px 40px;
+}
 
-    // border: 1px solid #000;
+.wrapper  {
+    display: flex;
+    justify-content: space-between;
 }

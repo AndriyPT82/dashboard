@@ -10,6 +10,7 @@ import saved2_icon from './saved2_icon.svg'
 import settings_icon from './settings_icon.svg'
 import rendersee_logo from './rendersee_logo.svg'
 import favorite_icon from './favorite_icon.svg'
+import search_icon from './search_icon.svg'
 
 
 
@@ -25,5 +26,6 @@ export {
    saved2_icon,
    settings_icon,
    rendersee_logo,
-   favorite_icon
+   favorite_icon,
+   search_icon
 };

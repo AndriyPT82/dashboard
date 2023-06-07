@@ -1,0 +1,29 @@
+@import '../../utils/styles/variables.scss';
+
+input {
+  height: 30px;
+  width: 200px;
+  margin-top: 10px;
+  padding-left: 30px;
+  border: 1px solid $BORDER_COLOR;
+  border-radius: 4px;
+
+  background-image: url('../../utils/icons/search_icon.svg');
+  background-repeat: no-repeat;
+  background-position: 13px ;
+
+
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $BORDER_COLOR;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $BORDER_COLOR;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $BORDER_COLOR;
+}

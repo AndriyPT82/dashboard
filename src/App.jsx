@@ -5,7 +5,6 @@ import {
   DashboardHeader,
   Projects,
   Uploads,
-  Textures,
   ContactUs,
   ViewProject,
   AccountDetails,
@@ -49,7 +48,6 @@ function App() {
               <Route path='uploads' element={<Uploads />} />
               <Route path='catalog' element={<Catalog />} />
               <Route path='favorites' element={<Favorites />} />
-              <Route path='textures' element={<Textures />} />
               <Route path='help_center' element={<ContactUs />} />
               <Route path='view_project' element={<ViewProject />} />
               <Route path='account_details' element={<AccountDetails />} />

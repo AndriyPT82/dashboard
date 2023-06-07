@@ -7,8 +7,7 @@ import s from './DropdownSidebar.module.scss';
 const links = [
   { path: 'uploads', title: 'Uploads', icon: 'help_center_icon.png' },
   { path: 'catalog', title: 'Catalog', icon: 'help_center_icon.png' },
-  { path: 'favorites', title: 'Favorites', icon: 'help_center_icon.png' },
-  { path: 'textures', title: 'Textures', icon: 'help_center_icon.png' }
+  { path: 'favorites', title: 'Favorites', icon: 'help_center_icon.png' }
 ]
 
 const handleSelectedLink = (isActive, className) => {
@@ -18,13 +17,13 @@ const handleSelectedLink = (isActive, className) => {
 const  DropdownSidebar = () => {
 
   const [isActive, setIsActive] = useState(false);
-  const [selected, setIsSelected] = useState("Choose one");
+  const [selected, setIsSelected] = useState("Textures");
 
   const location = useLocation()
 
   useEffect(() => {
     if (links.map(obj => obj.path).includes(location.pathname.slice(1))) return;
-    setIsSelected('Choose one')
+    setIsSelected('Textures')
     setIsActive(false)
   }, [location.pathname])
 
@@ -33,7 +32,7 @@ const  DropdownSidebar = () => {
       <li className={s.link_wrapper}>
         <div
           onClick={(e) => setIsActive(!isActive)}
-          className={selected === 'Choose one' ? s.link : `${s.link} ${s.active}`}
+          className={selected === 'Textures' ? s.link : `${s.link} ${s.active}`}
           style={{ backgroundImage: `url(${dropbown_icon})` }}
         >
           {selected}

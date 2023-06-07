@@ -11,7 +11,6 @@ import { DropdownSidebar, SmallAccountDetails } from "components";
 const links = [
   { path: '/', title: 'Dashboard', icon: dashboard_icon },
   { path: 'projects', title: 'Projects', icon: projects_icon },
-
   { path: 'settings', title: 'Settings', icon: settings_icon },
   { path: 'help_center', title: 'Help Center', icon: help_center_icon },
 ]

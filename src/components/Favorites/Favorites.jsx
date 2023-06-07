@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import s from './Favorites.module.scss';
-import { CardGallery, FilterContainer } from 'components';
-
+import { CardGallery, FilterContainer, Search } from 'components';
 
 const links = ['paint', 'grout color'];
 
@@ -22,7 +21,12 @@ function Favorites() {
   return (
     <>
       <FilterContainer>
-        <h3>Favorites</h3>
+
+        <div className={s.wrapper}>
+
+          <h3>Favorites</h3>
+          <Search />
+        </div>
         <div className={s.toggle_container}>
           <div
             className={s.toggle}

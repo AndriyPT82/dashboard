@@ -1,5 +1,10 @@
 .container {}
 
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 .toggle_container {
   position: relative;
   display: flex;
