@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dashboard/static/css/main.c613fcc1.css",
-    "main.js": "/dashboard/static/js/main.b5637768.js",
+    "main.css": "/dashboard/static/css/main.fb50fb99.css",
+    "main.js": "/dashboard/static/js/main.c3b5496b.js",
     "static/js/787.545aecf5.chunk.js": "/dashboard/static/js/787.545aecf5.chunk.js",
     "static/media/photo1.png": "/dashboard/static/media/photo1.563bad508142ddb52382.png",
     "static/media/tile_TEST.png": "/dashboard/static/media/tile_TEST.d39ceeff5f60a9c0a82c.png",
@@ -17,6 +17,7 @@
     "static/media/bell.svg": "/dashboard/static/media/bell.ea6813a8af7a93f461a9ad01fbef371a.svg",
     "static/media/dollar_icon.svg": "/dashboard/static/media/dollar_icon.0ba635335ecdddc3a2a926cec5b6a6dc.svg",
     "index.html": "/dashboard/index.html",
+    "static/media/search_icon.svg": "/dashboard/static/media/search_icon.88965eb3fa404672f9e4433d661b7220.svg",
     "static/media/favorite_icon.svg": "/dashboard/static/media/favorite_icon.74dd1f04dea275d7604e09a6eee54743.svg",
     "static/media/projects_icon.svg": "/dashboard/static/media/projects_icon.6108acbf3a50f6c416d5b58fc450ce33.svg",
     "static/media/help_center_icon.svg": "/dashboard/static/media/help_center_icon.02e38784d00adcb04506f726d5b7902c.svg",
@@ -24,12 +25,12 @@
     "static/media/dropbown_icon.svg": "/dashboard/static/media/dropbown_icon.6edac5139ea0fe182d54d8bae2295d9d.svg",
     "static/media/arrow.svg": "/dashboard/static/media/arrow.36d8690a4205427fc267a7da95ae309b.svg",
     "static/media/plus.svg": "/dashboard/static/media/plus.627f20d488c545780529.svg",
-    "main.c613fcc1.css.map": "/dashboard/static/css/main.c613fcc1.css.map",
-    "main.b5637768.js.map": "/dashboard/static/js/main.b5637768.js.map",
+    "main.fb50fb99.css.map": "/dashboard/static/css/main.fb50fb99.css.map",
+    "main.c3b5496b.js.map": "/dashboard/static/js/main.c3b5496b.js.map",
     "787.545aecf5.chunk.js.map": "/dashboard/static/js/787.545aecf5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c613fcc1.css",
-    "static/js/main.b5637768.js"
+    "static/css/main.fb50fb99.css",
+    "static/js/main.c3b5496b.js"
   ]
 }
