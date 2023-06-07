@@ -3,14 +3,11 @@ import { v4 as uuidv4 } from "uuid";
 
 import s from './CatalogSelect.module.scss';
 
-
-
-
-const CatalogSelect = ({title = 'Brand', data=[], id}) => {
+const CatalogSelect = ({title = 'Brand', data=[], id, selected, setSelected}) => {
 
   const [isActive, setIsActive] = useState(false);
 
-  const [selected, setSelected] = useState([]);
+  // const [selected, setSelected] = useState([]);
 
   // const onRemoveSelected = (e) => {
   //   const value = e.target.value;
