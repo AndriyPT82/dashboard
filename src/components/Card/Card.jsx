@@ -9,11 +9,29 @@ function Card({ image, title, description, isVisible }) {
 
   return (
     <li className={s.container}>
-      <img src={tile_TEST} alt="card_image"/>
+      {
+        location === 'catalog' && (
+          <div className={s.company_container}>
+            <div className={s.company_logo}></div>
+            <h4>Company Name</h4>
+          </div>
+        )
+      }
+      <img src={tile_TEST} alt="card_image" />
       <div className={s.info}>
-        <h3 className={s.title}>Bathroom</h3>
-        <h4 className={s.description}>Created 23.08.2022</h4>
-        {location !== 'projects' && <h5 className={s.category}>tile</h5>}
+        {
+          !['favorites', 'catalog'].includes(location) &&
+          <h3 className={s.title}>Bathroom</h3>
+        }
+        <h4 className={s.description}>
+          Texture Size
+        </h4>
+
+        {!['projects', 'catalog', 'favorites'].includes(location)  && <h5 className={s.category}>tile</h5>}
+        {['favorites', 'catalog'].includes(location) && <button
+          className={s.favorit}
+          onClick={() => console.log('added to favorites')}
+        ></button>}
       </div>
       {
         location === 'projects' && (

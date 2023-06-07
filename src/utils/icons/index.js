@@ -9,6 +9,7 @@ import dropbown_icon from './dropbown_icon.svg'
 import saved2_icon from './saved2_icon.svg'
 import settings_icon from './settings_icon.svg'
 import rendersee_logo from './rendersee_logo.svg'
+import favorite_icon from './favorite_icon.svg'
 
 
 
@@ -23,5 +24,6 @@ export {
    dropbown_icon,
    saved2_icon,
    settings_icon,
-   rendersee_logo
+   rendersee_logo,
+   favorite_icon
 };

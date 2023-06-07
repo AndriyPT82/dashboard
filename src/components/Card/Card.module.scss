@@ -15,8 +15,21 @@
     max-height: 300px;
     height: 100%;
     min-height: 200px;
-    object-fit:cover;
+    object-fit: cover;
   }
+}
+
+.company_container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.company_logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #d7e8b0;
 }
 
 .info {
@@ -49,4 +62,14 @@
   min-height: 50px;
   border: 1px solid $BORDER_COLOR;
   border-radius: 36px;
+}
+
+.favorit {
+  color: grey;
+  height: 20px;
+  width: 20px;
+  background-image: url('../../utils/icons/favorite_icon.svg');
+  background-size:contain;
+  background-repeat: no-repeat;
+  ;
 }
